@@ -31,4 +31,33 @@ class UI{
         </div>
         `
     }
+
+    //show alert
+    showAlert(message, className){
+        this.clearAlert();
+        const div = document.createElement('div');
+        div.className = className;
+        div.appendChild(document.createTextNode(message));
+
+        const container = document.querySelector('.container');
+        const card = document.querySelector('.card');
+
+        container.insertBefore(div, card);
+
+        setTimeout(()=>{
+            document.querySelector('.alert').remove();
+        }, 3000);
+    }
+
+    //clear alert
+    clearAlert(){
+        const currentAlert = document.querySelector('.alert');
+        if(currentAlert){
+            currentAlert.remove();
+        }
+    }
+
+    clearProfile(){
+        this.profile.innerHTML = '';
+    }
 }
