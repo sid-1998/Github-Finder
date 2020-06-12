@@ -47,7 +47,7 @@ class UI{
 
         setTimeout(()=>{
             document.querySelector('.alert').remove();
-        }, 3000);
+        }, 1000);
     }
 
     //clear alert
